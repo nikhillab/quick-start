@@ -1,0 +1,46 @@
+Docker commands 
+	pull [image name] -> download image
+	run [image name]-> run a container
+	run -d [image name] -> run a container in background
+	run -p [external : internal] -> run on port
+	run -v [internal : external] -> storage 
+	attach [ID/name] -> attach container to current cmd
+	ps -> list all running containers
+	ps -a -> list all running and stoped containers
+	stop [name/ID] -> stop the container
+	rm [names/IDs] -> remove container from the process
+	image -> see all the image downloaded locally 
+	rmi [names] -> remove image from local
+	exec [ID] [command] -> run any command on running container
+	-e [name] -> for setting environment variables
+	--links -> to link containers to each other
+	start [contatiner name] -> start a contatiner 
+	
+	
+To connect to any db or server on the host machine from any containers can be done 
+using [host.docker.internal:PORT]
+	
+If we are running a DB server as container then we can use the IP address of that
+container for the connection.(Not recommended)
+Use --network for inter container communication and use the name of the container
+for the connection
+
+
+To create network
+	docker network create [name]
+	
+	
+	https://github.com/wsargent/docker-cheat-sheet
+	https://github.com/bfreuden/kubernetes-cheat-sheet#replicaset
+	
+	
+docker system df
+docker system df -v
+
+IMAGE and CONTAINER
+
+for creting our image we need to have a file name 
+Dockerfile
+File must start with a FROM  instruction
+
+CMD to build -> docker build [in file directory]
